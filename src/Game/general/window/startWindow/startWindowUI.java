@@ -1,5 +1,7 @@
 package Game.general.window.startWindow;
 
+import Game.general.utilities.FontHandler;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -50,6 +52,9 @@ public class startWindowUI {
 
     private Component createHeader() {
         JLabel header = new JLabel("UnknowGame");
+        Font customFont = FontHandler.registerFontBlackSmith();
+        //customFont.
+        header.setFont(FontHandler.registerFontBlackSmith()); // TODO setze Size
         //TODO Change header size and font maybe
         return header;
     }
