@@ -8,7 +8,7 @@ import java.io.File;
  */
 public class FontHandler {
 
-    private final static String BLACKSMITH = "UGame\\Files\\Fonts\\BlackSmith.ttf"; //TODO kann er nicht lesen
+    private final static String BLACKSMITH = "Files/Fonts/BlackSmith.ttf"; //TODO kann er nicht lesen
 
     public static Font registerFontBlackSmith() {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();

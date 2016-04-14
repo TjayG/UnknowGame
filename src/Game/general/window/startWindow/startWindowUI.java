@@ -52,10 +52,7 @@ public class startWindowUI {
 
     private Component createHeader() {
         JLabel header = new JLabel("UnknowGame");
-        Font customFont = FontHandler.registerFontBlackSmith();
-        //customFont.
-        header.setFont(FontHandler.registerFontBlackSmith()); // TODO setze Size
-        //TODO Change header size and font maybe
+        header.setFont(getHeaderFont());
         return header;
     }
 
@@ -63,5 +60,11 @@ public class startWindowUI {
         JPanel mainpanel = new JPanel();
 
         return mainpanel;
+    }
+    
+    private Font getHeaderFont(){
+    	Font customFont = FontHandler.registerFontBlackSmith();
+    	customFont.deriveFont(80f);
+    	return customFont;
     }
 }
