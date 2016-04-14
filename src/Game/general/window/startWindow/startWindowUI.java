@@ -42,29 +42,36 @@ public class startWindowUI {
         centerpanel.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         //Create Header
-        constraints.gridx = 0; //TODO set X
-        constraints.gridx = 0; //TODO set Y
+        constraints.gridx = 1; //TODO set X
+        constraints.gridy = 0; //TODO set Y
         centerpanel.add(createHeader(), constraints);
+        
         //TODO Create Buttons
 
         return centerpanel;
     }
-
+    /**
+     * This method create the Header for startWindow
+     * @return then Header, Title.
+     */
     private Component createHeader() {
         JLabel header = new JLabel("UnknowGame");
         header.setFont(getHeaderFont());
         return header;
+    }
+    /**
+     * This method create the Font for the Header
+     * @return the Font for the header
+     */
+    private Font getHeaderFont(){
+    	Font customFont = FontHandler.getStandardFont();
+    	customFont = customFont.deriveFont(80f);
+    	return customFont;
     }
 
     private JPanel createMainpanel() {
         JPanel mainpanel = new JPanel();
 
         return mainpanel;
-    }
-    
-    private Font getHeaderFont(){
-    	Font customFont = FontHandler.registerFontBlackSmith();
-    	customFont.deriveFont(80f);
-    	return customFont;
     }
 }

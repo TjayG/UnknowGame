@@ -8,17 +8,19 @@ import java.io.File;
  */
 public class FontHandler {
 
-    private final static String BLACKSMITH = "Files/Fonts/BlackSmith.ttf"; //TODO kann er nicht lesen
-
-    public static Font registerFontBlackSmith() {
+    private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO kann er nicht lesen
+    /**
+     * This Method give you the StandardFont
+     * With .derive(float f) you can manipulate the Size
+     * @return the StandardFont
+     */
+    public static Font getStandardFont() {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        Font blacksmith_font;
         try {
-            blacksmith_font = Font.createFont(Font.TRUETYPE_FONT, new File(BLACKSMITH));
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(BLACKSMITH)));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(STANDARD_FONT)));
+            return Font.createFont(Font.TRUETYPE_FONT, new File(STANDARD_FONT));
         } catch (Exception e) {
             return null;
         }
-        return blacksmith_font;
     }
 }
