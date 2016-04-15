@@ -29,6 +29,7 @@ public class startWindowUI {
         JFrame frame = new JFrame("UnknowGame"); //TODO Change Title
         frame.add(mainpanel);
         frame.setSize(new Dimension(SIZE_WIDTH, SIZE_HEIGHT));
+        frame.setResizable(false);
         frame.setVisible(true);
         //TODO set some other properties like resizeable
     }

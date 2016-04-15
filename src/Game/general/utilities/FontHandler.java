@@ -8,7 +8,7 @@ import java.io.File;
  */
 public class FontHandler {
 
-    private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO kann er nicht lesen
+    private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO Change Font-Style
     /**
      * This Method give you the StandardFont
      * With .derive(float f) you can manipulate the Size
