@@ -8,19 +8,30 @@ import java.io.File;
  */
 public class FontHandler {
 
-    private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO Change Font-Style
+	static boolean standardFontIsAlreadyRegister = false;
+	
+    private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO Change Font-Style with Numbers
     /**
-     * This Method give you the StandardFont
-     * With .derive(float f) you can manipulate the Size
-     * @return the StandardFont
+     * This Method give you the needed Font
      */
-    public static Font getStandardFont() {
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    private static Font getFont(String fontPath) {
         try {
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(STANDARD_FONT)));
-            return Font.createFont(Font.TRUETYPE_FONT, new File(STANDARD_FONT));
+        	if(!standardFontIsAlreadyRegister){
+        	GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fontPath)));
+        	}else{standardFontIsAlreadyRegister = true;}
+            return Font.createFont(Font.TRUETYPE_FONT, new File(fontPath));
         } catch (Exception e) {
             return null;
         }
+    }
+    /**
+     * This method give you the standard font
+     * @param size the size of your font
+     * @return return the font with the right size
+     */
+    public static Font getStandardFont(float size){
+    	return new Font(Font.SANS_SERIF, Font.BOLD, (int)size);
+    	//return getFont(STANDARD_FONT).deriveFont(size);
     }
 }
