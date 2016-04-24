@@ -3,6 +3,8 @@ package Game.general.window.startWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import Game.general.window.creditsWindow.CreditsWindowTool;
+
 /**
  * TODO document
  */
@@ -28,7 +30,10 @@ public class startWindowTool {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//TODO add CreditsWindow but you can also use startWindow
+				CreditsWindowTool creditsWindow;
+				creditsWindow = new CreditsWindowTool();
+				creditsWindow.startWindow(_ui.getFrame());
+				
 			}
 		});
     	

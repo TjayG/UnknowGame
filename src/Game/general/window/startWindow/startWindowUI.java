@@ -29,6 +29,7 @@ public class startWindowUI {
     private boolean isRunningTimeThread = false;
 
     private JButton[] _buttons;
+    private JFrame _frame;
 
 
     public void initializeWindow(){
@@ -51,12 +52,13 @@ public class startWindowUI {
     // --- Create Frame ---
 
     private void createFrame(JPanel mainpanel) {
-        JFrame frame = new JFrame("UnknowGame"); //TODO Change Title
-        frame.add(mainpanel);
-        frame.setSize(new Dimension(SIZE_WIDTH, SIZE_HEIGHT));
-        frame.pack();
-        frame.setResizable(false);
-        frame.setVisible(true);
+        _frame = new JFrame("UnknowGame"); //TODO Change Title
+        _frame.add(mainpanel);
+        _frame.setSize(new Dimension(SIZE_WIDTH, SIZE_HEIGHT));
+        _frame.pack();
+        _frame.setResizable(false);
+        _frame.setLocationRelativeTo(null);
+        _frame.setVisible(true);
         //TODO set some other properties like resizeable
     }
 
@@ -158,8 +160,14 @@ public class startWindowUI {
         return header;
     }
     
+    // --- Getter ---
+    
     public JButton getButton(int button){
     	return _buttons[button];
+    }
+    
+    public JFrame getFrame(){
+    	return _frame;
     }
     
     // --- Utils ---
