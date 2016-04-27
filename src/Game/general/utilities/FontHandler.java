@@ -10,6 +10,8 @@ public class FontHandler {
 
 	static boolean standardFontIsAlreadyRegister = false;
 	
+	private final static float BUTTON_SIZE = 10f;
+	
     private final static String STANDARD_FONT = "Files/Fonts/BlackSmith.ttf"; //TODO Change Font-Style with Numbers
     /**
      * This Method give you the needed Font
